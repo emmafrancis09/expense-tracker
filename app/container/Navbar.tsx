@@ -22,7 +22,7 @@ export default function Navbar() {
   const currentPath = usePathname();
   console.log(currentPath);
   return (
-    <nav className="fixed top-0 left-0 mx-auto w-full py-4 shadow-md">
+    <nav className="fixed top-0 left-0 mx-auto w-full py-4 shadow-md z-50 backdrop:blur-lg bg-neutral-100">
       <ul className="flex items-center justify-center space-x-8">
         {Navlinks.map((link) => {
           const isActive =

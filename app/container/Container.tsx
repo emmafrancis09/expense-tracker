@@ -8,7 +8,7 @@ type Props = {
 
 export default function Container({ children }: Props) {
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex items-center justify-center mt-16">
       <header>
         <Navbar />
         <Darkmode />
