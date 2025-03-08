@@ -8,8 +8,9 @@ export default function Page() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-12 min-h-screen">
+    <div className="flex flex-col items-center justify-center px-6 py-12">
       <div className="max-w-3xl text-center">
+        <h1 className="text-5xl font-bold py-12">Home</h1>
         <h1 className="text-4xl font-bold text-gray-800 mb-6">
           📊 Take Control of Your Finances with Ease!
         </h1>
