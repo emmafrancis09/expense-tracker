@@ -10,7 +10,7 @@ export default async function Dashboardpage() {
     <div className="flex flex-col items-center justify-center px-6 py-12">
       <h1 className="text-4xl font-bold text-gray-800">Dashboard</h1>
       {expenses.length > 0 ? (
-        <ul className="grid grid-cols-3 gap-2 pt-4 mb-14">
+        <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-2 pt-4 mb-14 gap-y-3">
           {expenses.map((expense) => (
             <li
               key={expense._id}
