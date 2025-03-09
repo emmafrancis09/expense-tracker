@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Container from "./container/Container";
-import { ThemeProvider } from "@/utils/theme/theme-provider";
 import {
   ClerkProvider,
   SignInButton,
@@ -10,6 +9,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,25 +37,20 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Container>
-              <header className="fixed top-0 right-0 z-50 p-4">
-                <SignedOut>
-                  <SignInButton />
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-              </header>
+          <Analytics />
 
-              {children}
-            </Container>
-          </ThemeProvider>
+          <Container>
+            <header className="fixed top-0 right-0 z-50 p-4">
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </header>
+
+            {children}
+          </Container>
         </body>
       </html>
     </ClerkProvider>
