@@ -4,6 +4,7 @@ import "./globals.css";
 import Container from "./container/Container";
 import { ClerkProvider, SignedIn, UserButton } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <Analytics />
+          <SpeedInsights />
 
           <Container>
             <header className="fixed top-0 right-0 z-50 p-4">
